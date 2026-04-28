@@ -531,6 +531,40 @@ class Main
 1=1
 2=3
 3=1
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();   // ✅ full line input
+
+        char a[] = s.toCharArray();
+        int n = a.length;
+
+        for (int i = 0; i < n; i++) {
+            int c = 1;
+
+            if (a[i] == ' ') 
+                continue;
+
+            for (int j = i + 1; j < n; j++) {
+                if (a[i] == a[j]) {
+                    c++;
+                    a[j] = ' ';
+                }
+            }
+
+            System.out.println(a[i] + " = " + c);
+        }
+    }
+}
+a d e f d a a f a 
+a = 4
+d = 2
+e = 1
+f = 2
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //15. Matrix Addition
 import java.util.*;
