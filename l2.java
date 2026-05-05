@@ -160,6 +160,24 @@ class R192511008 {
         System.out.println(set);
     }
 }
+//no hash
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 2, 3, 4, 4, 5};
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i : arr) {
+            if (!list.contains(i)) {
+                list.add(i);
+            }
+        }
+
+        System.out.println(list);
+    }
+}
 ----------------------------------------------------------------------------------------------------
   //9. Avg Positive & Negative
 import java.util.*;
