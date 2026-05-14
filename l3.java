@@ -76,39 +76,36 @@ class R008{
 
 ```java
 import java.util.*;
+
 class R008{
-    static boolean prime(int n){
-        if(n<2) return false;
-        for(int i=2;i<=Math.sqrt(n);i++)
-            if(n%i==0) return false;
-        return true;
-    }
-
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-
-        int count=0,num=2,nth=0;
-
-        while(count<n){
-            if(prime(num)){
-                count++;
-                nth=num;
-            }
-            num++;
+    public static void main(String args[])    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int c = 0, i = 2, nth = 0;
+        while(c < n){
+            int f = 0;
+            for(int j = 1; j <= i; j++){
+                if(i % j == 0)
+                    f++;            }
+            if(f == 2)            {
+                c++;
+                nth = i;            }
+            i++;
         }
-
-        System.out.println("Nth Prime="+nth);
-
-        count=0;
-        num=nth+1;
-
-        while(count<n){
-            if(prime(num)){
-                System.out.print(num+" ");
-                count++;
+        System.out.println("Nth Prime=" + nth);
+        c = 0;
+        i = nth + 1;
+        while(c < n)        {
+            int f = 0;
+            for(int j = 1; j <= i; j++)            {
+                if(i % j == 0)
+                    f++;
             }
-            num++;
+            if(f == 2)            {
+                System.out.print(i + " ");
+                c++;
+            }
+            i++;
         }
     }
 }
@@ -120,25 +117,22 @@ class R008{
 
 ```java
 import java.util.*;
-class R008{
-    static int sum(int n){
-        int s=0;
-        while(n>0){
-            s+=n%10;
-            n/=10;
-        }
-        return s;
-    }
-
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        int l=sc.nextInt();
-        int u=sc.nextInt();
-
-        for(int i=l;i<=u;i++){
-            int r=(int)Math.sqrt(i);
-            if(r*r==i && sum(i)<10)
-                System.out.print(i+" ");
+class R008
+{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        int u = sc.nextInt();
+        for(int i = l; i <= u; i++)        {
+            int t = i, s = 0;
+            while(t > 0)            {
+                s = s + t % 10;
+                t = t / 10;
+            }
+            for(int j = 1; j <= i; j++)            {
+                if(j * j == i && s < 10)
+                    System.out.print(i + " ");
+            }
         }
     }
 }
