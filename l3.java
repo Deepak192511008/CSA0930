@@ -233,29 +233,27 @@ class R008{
 ```java
 import java.util.*;
 class R008{
-    static int rev(int n){
-        int r=0;
-        while(n>0){
-            r=r*10+n%10;
-            n/=10;
-        }
-        return r;
-    }
-
     public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         while(true){
-            int r=rev(n);
-            int sum=n+r;
-            System.out.println(n+"+"+r+"="+sum);
-
-            if(sum==rev(sum)){
-                System.out.println("Palindrome="+sum);
+            int temp = n, rev = 0;
+            while(temp > 0){
+                rev = rev * 10 + temp % 10;
+                temp /= 10;
+            }
+            int sum = n + rev;
+            System.out.println(n + "+" + rev + "=" + sum);
+            int t = sum, pal = 0;
+            while(t > 0){
+                pal = pal * 10 + t % 10;
+                t /= 10;
+            }
+            if(sum == pal){
+                System.out.println("Palindrome=" + sum);
                 break;
             }
-            n=sum;
+            n = sum;
         }
     }
 }
@@ -373,32 +371,24 @@ class R008{
 
 ```java
 import java.util.*;
+
 class R008{
-    static int value(char c){
-        switch(c){
-            case 'I': return 1;
-            case 'V': return 5;
-            case 'X': return 10;
-            case 'L': return 50;
-            case 'C': return 100;
-            case 'D': return 500;
-            case 'M': return 1000;
-        }
-        return 0;
-    }
-
     public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        String s=sc.next();
-        int sum=0;
-
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int sum = 0;
         for(int i=0;i<s.length();i++){
-            if(i<s.length()-1 && value(s.charAt(i))<value(s.charAt(i+1)))
-                sum-=value(s.charAt(i));
-            else
-                sum+=value(s.charAt(i));
+            char c = s.charAt(i);
+            int n = 0;
+            if(c=='I') n=1;
+            else if(c=='V') n=5;
+            else if(c=='X') n=10;
+            else if(c=='L') n=50;
+            else if(c=='C') n=100;
+            else if(c=='D') n=500;
+            else if(c=='M') n=1000;
+            sum += n;
         }
-
         System.out.println(sum);
     }
 }
@@ -440,14 +430,29 @@ class R008{
 import java.util.*;
 class R008{
     public static void main(String args[]){
-        int mat[][]={{1,1,0},{1,1,1},{1,0,0}};
-
-        for(int i=0;i<mat.length;i++){
-            int count=0;
-            for(int j=0;j<mat[i].length;j++)
-                count+=mat[i][j];
-
-            System.out.println("Row "+i+" Soldiers="+count);
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int a[][] = new int[m][n];
+        int count[] = new int[m];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                a[i][j] = sc.nextInt();
+                if(a[i][j] == 1)
+                    count[i]++;
+            }
+        }
+        int k = sc.nextInt();
+        for(int i=0;i<k;i++){
+            int min = 999, idx = -1;
+            for(int j=0;j<m;j++){
+                if(count[j] < min){
+                    min = count[j];
+                    idx = j;
+                }
+            }
+            System.out.print(idx + " ");
+            count[idx] = 999;
         }
     }
 }
@@ -610,17 +615,30 @@ class R008{
 import java.util.*;
 class R008{
     public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        String name=sc.nextLine();
-        String address=sc.nextLine();
-        String phone=sc.nextLine();
+        Person p = new Person();
 
-        System.out.println(name);
-        System.out.println(address);
-        System.out.println(phone);
+        p.name = sc.nextLine();
+        p.address = sc.nextLine();
+        p.telephone = sc.nextLine();
+        p.mobile = sc.nextLine();
+        p.head = sc.nextLine();
+        p.id = sc.nextLine();
+
+        System.out.println("Name : " + p.name);
+        System.out.println("Address : " + p.address);
+        System.out.println("Telephone : " + p.telephone);
+        System.out.println("Mobile : " + p.mobile);
+        System.out.println("Head of Family : " + p.head);
+        System.out.println("Unique ID : " + p.id);
     }
 }
+class Person{
+    String name,address,telephone,mobile,head,id;
+}
+
+
 ```
 
 ---
