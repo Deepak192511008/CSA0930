@@ -1,37 +1,27 @@
 //Full Diamond Pattern
 import java.util.*;
-
 class Main {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
         // 🔺 Upper pyramid
         for(int i=1;i<=n;i++){
-
             for(int j=1;j<=n-i;j++){
                 System.out.print(" ");
             }
-
             for(int j=1;j<=2*i-1;j++){
                 System.out.print("*");
             }
-
             System.out.println();
         }
-
         // 🔻 Inverted pyramid
         for(int i=n-1;i>=1;i--){
-
             for(int j=1;j<=n-i;j++){
                 System.out.print(" ");
             }
-
             for(int j=1;j<=2*i-1;j++){
                 System.out.print("*");
             }
-
             System.out.println();
         }
     }
@@ -49,17 +39,12 @@ class Main {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Right Triangle
 import java.util.*;
-class Main 
-{
-    public static void main(String[] args) 
-    {
+class Main {
+    public static void main(String[] args)  {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
-        for(int i=1;i<=n;i++)
-        {
-            for(int j=1;j<=i;j++)
-            {
+        for(int i=1;i<=n;i++)      {
+            for(int j=1;j<=i;j++)            {
                 System.out.print("  *");
             }
             System.out.println();
@@ -77,9 +62,7 @@ class Main
 //Pascal Triangle
 class R192511008 {
     public static void main(String[] args) {
-
         int n = 5;
-
         for(int i=0;i<n;i++){
             int num = 1;
             for(int j=0;j<=i;j++){
@@ -99,16 +82,13 @@ class R192511008 {
 //Diamond Number Pattern
 class R192511008 {
     public static void main(String[] args) {
-
         int n = 4;
-
         for(int i=1;i<=n;i++){
             for(int j=1;j<=i;j++){
                 System.out.print(i + " ");
             }
             System.out.println();
         }
-
         for(int i=n-1;i>=1;i--){
             for(int j=1;j<=i;j++){
                 System.out.print(i + " ");
@@ -128,21 +108,15 @@ class R192511008 {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Full Pyramid
  import java.util.*;
-class Main 
-{
-    public static void main(String[] args) 
-    {
+class Main {
+    public static void main(String[] args)    {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
-        for(int i=1;i<=n;i++)
-        {
-            for(int j=1;j<=n-i;j++)
-            {
+        for(int i=1;i<=n;i++)        {
+            for(int j=1;j<=n-i;j++)            {
                 System.out.print(" ");
             }
-            for(int k=1;k<=i;k++)
-            {
+            for(int k=1;k<=i;k++)            {
                 System.out.print("* ");
             }
             System.out.println();
@@ -158,17 +132,13 @@ class Main
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //3. Inverted Pyramid
 import java.util.*;
-class Main 
-{
-    public static void main(String[] args) 
-    {
+class Main {
+    public static void main(String[] args)     {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
         for(int i=n;i>=1;i--)
         {
-            for(int j=1;j<=i;j++)
-            {
+            for(int j=1;j<=i;j++)            {
                 System.out.print("* ");
             }
             System.out.println();
@@ -184,23 +154,16 @@ class Main
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //4. Hollow Square
 import java.util.*;
-class Main 
-{
-    public static void main(String[] args) 
-    {
+class Main {
+    public static void main(String[] args)    {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
-        for(int i=1;i<=n;i++)
-        {
-            for(int j=1;j<=n;j++)
-            {
-                if(i==1 || i==n || j==1 || j==n)
-                {
+        for(int i=1;i<=n;i++)       {
+            for(int j=1;j<=n;j++)            {
+                if(i==1 || i==n || j==1 || j==n)                {
                     System.out.print("*");
                 }
-                else
-                {
+                else                {
                     System.out.print(" ");
                 }
             }
@@ -219,18 +182,14 @@ class Main
 //LCM & GCD (2 numbers simple)
 class R192511008 {
     public static void main(String[] args) {
-
         int a = 16, b = 20;
         int gcd = 1;
-
         for(int i=1;i<=a && i<=b;i++){
             if(a%i==0 && b%i==0){
                 gcd = i;
             }
         }
-
         int lcm = (a*b)/gcd;
-
         System.out.println("GCD = " + gcd);
         System.out.println("LCM = " + lcm);
     }
@@ -241,20 +200,15 @@ LCM = 80
 //Sum of Digits (single digit)
 class R192511008 {
     public static void main(String[] args) {
-
         int num = 143;
-
         while(num >= 10){
             int sum = 0;
-
             while(num > 0){
                 sum += num%10;
                 num /= 10;
             }
-
             num = sum;
         }
-
         System.out.println("Result = " + num);
     }
 }
@@ -263,9 +217,7 @@ Result = 8
 //Multiplication Table
 class R192511008 {
     public static void main(String[] args) {
-
         int m=4, n=5;
-
         for(int i=1;i<=n;i++){
             System.out.println(i+" x "+m+" = "+(i*m));
         }
@@ -279,19 +231,14 @@ class R192511008 {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //5. Factorial
 import java.util.*;
-class Main 
-{
-    public static void main(String[] args) 
-    {
+class Main {
+    public static void main(String[] args)     {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int f = 1;
-
-        for(int i=1;i<=n;i++)
-        {
+        for(int i=1;i<=n;i++)       {
             f = f * i;
         }
-
         System.out.println(f);
     }
 }
@@ -300,17 +247,12 @@ class Main
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //6. Fibonacci
 import java.util.*;
-class Main 
-{
-    public static void main(String[] args) 
-    {
+class Main {
+    public static void main(String[] args)     {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
         int a = 0, b = 1;
-
-        for(int i=1;i<=n;i++)
-        {
+        for(int i=1;i<=n;i++)        {
             System.out.print(a + " ");
             int c = a + b;
             a = b;
@@ -323,14 +265,11 @@ class Main
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //7. Reverse Number
 import java.util.*;
-class Main 
-{
-    public static void main(String[] args) 
-    {
+class Main {
+    public static void main(String[] args)     {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int r = 0;
-
         while(n > 0)
         {
             r = r * 10 + n % 10;
