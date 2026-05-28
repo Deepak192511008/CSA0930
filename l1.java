@@ -198,18 +198,32 @@ GCD = 4
 LCM = 80
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Sum of Digits (single digit)
-class R192511008 {
-    public static void main(String[] args) {
+class Main
+{
+    public static void main(String[] args)  {
+        int num = 23422;
+        if(num == 0)
+            System.out.println(0);
+        else
+            System.out.println(1 + (num - 1) % 9);
+    }
+}
+
+
+//another logic
+class Main{
+    public static void main(String[] args)    {
         int num = 143;
-        while(num >= 10){
-            int sum = 0;
-            while(num > 0){
-                sum += num%10;
-                num /= 10;
+        int sum = 0;
+        while(num > 0 || sum > 9)        {
+            if(num == 0)            {
+                num = sum;
+                sum = 0;
             }
-            num = sum;
+            sum += num % 10;
+            num /= 10;
         }
-        System.out.println("Result = " + num);
+        System.out.println("Result = " + sum);
     }
 }
 Result = 8
